@@ -65,7 +65,7 @@ export default function Dashboard() {
         <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="mb-6">
           <h1 className="font-display text-3xl mb-2">Welcome back, {user?.name || 'Learner'}!</h1>
           <p className="text-slate-600 dark:text-slate-400">
-            Your GradGear intelligence board keeps every step aligned to the {domainLabel} market.
+            Your RankRight intelligence board keeps every step aligned to the {domainLabel} market.
           </p>
         </motion.div>
 

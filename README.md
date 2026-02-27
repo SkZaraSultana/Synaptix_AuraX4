@@ -1,4 +1,4 @@
-GradGear Frontend (React + Vite)
+RankRight Frontend (React + Vite)
 
 Quickstart
 1) npm install

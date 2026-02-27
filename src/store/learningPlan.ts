@@ -123,7 +123,7 @@ export const useLearningPlanStore = create<LearningPlanState>()(
       })
     }),
     {
-      name: 'gradgear-learning-plan'
+      name: 'rankright-learning-plan'
     }
   )
 )

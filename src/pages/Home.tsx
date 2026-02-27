@@ -239,9 +239,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="text-7xl mb-6">⚙️</div>
+            <div className="text-7xl mb-6">📊</div>
             <h1 className="font-display text-5xl md:text-6xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-purple">
-              GradGear
+              RankRight
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
               Your Intelligent Career Companion

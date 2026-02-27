@@ -131,7 +131,7 @@ export default function Login() {
           className="text-center mb-8"
         >
           <h1 className="font-display text-3xl mb-2 bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-purple">
-            GradGear
+            RankRight
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-sm">Sign in to your account</p>
         </motion.div>

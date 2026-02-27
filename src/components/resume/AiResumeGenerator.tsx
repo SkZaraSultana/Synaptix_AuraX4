@@ -192,7 +192,7 @@ export default function AiResumeGenerator() {
         await html2pdf()
           .set({
             margin: 0.5,
-            filename: `${form.name || 'resume'}-gradgear.pdf`,
+            filename: `${form.name || 'resume'}-rankright.pdf`,
             image: { type: 'jpeg', quality: 0.98 },
             html2canvas: { scale: 2 },
             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },
@@ -221,7 +221,7 @@ export default function AiResumeGenerator() {
           <div>
             <h2 className="font-display text-2xl mb-2">AI Resume Generator</h2>
             <p className="text-slate-600 dark:text-slate-400">
-              Fill in the essentials and let GradGear craft a polished, ATS-ready resume in seconds.
+              Fill in the essentials and let RankRight craft a polished, ATS-ready resume in seconds.
             </p>
           </div>
           <div className="flex gap-3">
