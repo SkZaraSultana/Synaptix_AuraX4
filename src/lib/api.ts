@@ -76,7 +76,15 @@ export function getUserDomain() { return api.get('/user/domain') }
 export function setUserDomain(domains: string[]) { return api.post('/user/domain', { domains }) }
 
 // Auth
-export function registerUser(payload: {name:string;email:string;password:string;college?:string;year?:string;domain?:string}) {
+export function registerUser(payload: {
+  name: string
+  email: string
+  password: string
+  college?: string
+  year?: string
+  domain?: string
+  role?: 'student' | 'recruiter'
+}) {
   return api.post('/register', payload)
 }
 export function loginUser(payload: {email:string;password:string}) {
@@ -288,4 +296,32 @@ export function getLeaderboard(limit?: number) { return api.get('/leaderboard', 
 // Progress
 export function getUserProgress() { return api.get('/user/progress') }
 
+// Matching & explainable ranking
+export function updateUserSkills(payload: { skills: Array<{ name: string; proficiency_level: number }> }) {
+  return api.post('/matching/user/skills', payload)
+}
+
+export function createMatchingProject(payload: {
+  title: string
+  description: string
+  requirements: Array<{ skill_name: string; required_level: number; weight: number }>
+}) {
+  return api.post('/matching/projects', payload)
+}
+
+export function getMatchingProjects() {
+  return api.get('/matching/projects')
+}
+
+export function applyToMatchingProject(projectId: number) {
+  return api.post(`/matching/projects/${projectId}/apply`)
+}
+
+export function getProjectCandidates(projectId: number, fairness: boolean) {
+  return api.get(`/matching/projects/${projectId}/candidates`, { params: { fairness } })
+}
+
+export function getStudentApplications() {
+  return api.get('/matching/student/applications')
+}
 

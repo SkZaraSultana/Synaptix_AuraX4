@@ -5,7 +5,7 @@ import Button from '../ui/Button'
 import useAppStore from '../../store/useAppStore'
 import authStore from '../../store/auth'
 
-const links = [
+const studentLinks = [
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/skill-dashboard', label: 'Skills' },
   { to: '/resume', label: 'Resume' },
@@ -13,7 +13,13 @@ const links = [
   { to: '/quiz', label: 'Quiz' },
   { to: '/coding', label: 'Coding' },
   { to: '/projects', label: 'Projects' },
-  { to: '/leaderboard', label: 'Leaderboard' }
+  { to: '/matches', label: 'Matches' },
+  { to: '/leaderboard', label: 'Leaderboard' },
+]
+
+const recruiterLinks = [
+  { to: '/recruiter', label: 'Recruiter Dashboard' },
+  { to: '/projects', label: 'Learning Projects' },
 ]
 
 export default function Navbar() {
@@ -28,6 +34,8 @@ export default function Navbar() {
   const isHomePage = location.pathname === '/' || location.pathname === '/dashboard'
   const textColor = isHomePage ? 'text-white' : 'text-slate-600 dark:text-slate-300'
   const hoverColor = isHomePage ? 'hover:text-white/80' : 'hover:text-slate-900 dark:hover:text-white'
+
+  const links = (user?.role || 'student') === 'recruiter' ? recruiterLinks : studentLinks
 
   function handleLogout() {
     logout()

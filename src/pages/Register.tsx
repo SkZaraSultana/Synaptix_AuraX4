@@ -44,6 +44,7 @@ export default function Register() {
   const [collegeQuery, setCollegeQuery] = useState('')
   const [year, setYear] = useState('')
   const [domain, setDomain] = useState('')
+  const [role, setRole] = useState<'student' | 'recruiter'>('student')
   const [loading, setLoading] = useState(false)
   const [showDropdown, setShowDropdown] = useState(false)
   const navigate = useNavigate()
@@ -178,7 +179,7 @@ export default function Register() {
 
     setLoading(true)
     try {
-      await registerUser({ name, email, password, domain, college, year })
+      await registerUser({ name, email, password, domain, college, year, role })
       toast.success('Registration successful!')
       setTimeout(() => {
         toast.success('Redirecting to login...')
@@ -559,6 +560,29 @@ export default function Register() {
                     {domainError}
                   </motion.p>
                 )}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium mb-2 text-slate-700 dark:text-slate-300">
+                  Choose Account Type
+                </label>
+                <div className="grid grid-cols-2 gap-3">
+                  {['student', 'recruiter'].map((r) => (
+                    <motion.button
+                      key={r}
+                      onClick={() => setRole(r as 'student' | 'recruiter')}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`p-3 rounded-xl border-2 text-sm font-medium capitalize ${
+                        role === r
+                          ? 'bg-gradient-to-r from-brand-blue/20 to-brand-purple/20 border-brand-blue dark:border-brand-blue'
+                          : 'border-slate-300 dark:border-slate-600 hover:border-brand-blue/50'
+                      }`}
+                    >
+                      {r}
+                    </motion.button>
+                  ))}
+                </div>
               </div>
 
               <div className="flex gap-3">

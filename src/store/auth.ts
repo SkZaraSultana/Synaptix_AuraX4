@@ -5,6 +5,10 @@ type User = {
   name: string
   email: string
   domain?: string
+  role?: 'student' | 'recruiter'
+  gpa?: number
+  experience_years?: number
+  demographic_group?: string
 }
 
 type AuthState = {

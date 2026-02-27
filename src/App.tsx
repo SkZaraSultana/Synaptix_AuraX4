@@ -18,6 +18,8 @@ import Quiz from './pages/Quiz'
 import CodingPage from './pages/Coding'
 import SkillDashboard from './pages/SkillDashboard'
 import Leaderboard from './pages/Leaderboard'
+import RecruiterDashboard from './pages/RecruiterDashboard'
+import StudentMatches from './pages/StudentMatches'
 import authStore from './store/auth'
 
 export default function App() {
@@ -125,6 +127,22 @@ export default function App() {
               element={
                 <PrivateRoute>
                   <Leaderboard />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/recruiter"
+              element={
+                <PrivateRoute>
+                  <RecruiterDashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/matches"
+              element={
+                <PrivateRoute>
+                  <StudentMatches />
                 </PrivateRoute>
               }
             />
